@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Pages</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myapp" ng-controller="memberCtrl as ctrl">
+    <h1>Member Pages</h1>
+
+    <!-- Login Form -->
+    <div ng-show="ctrl.currentPage === 'login'">
+        <h2>Login</h2>
+        <form ng-submit="../ASM2/index.html">
+            <input type="text" ng-model="ctrl.loginData.username" placeholder="Username" required><br>
+            <input type="password" ng-model="ctrl.loginData.password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div ng-show="ctrl.currentPage === 'register'">
+        <h2>Register</h2>
+        <form ng-submit="ctrl.register()">
+            <input type="text" ng-model="ctrl.registerData.username" placeholder="Username" required><br>
+            <input type="password" ng-model="ctrl.registerData.password" placeholder="Password" required><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Change Password Form -->
+    <div ng-show="ctrl.currentPage === 'changePassword'">
+        <h2>Change Password</h2>
+        <form ng-submit="ctrl.changePassword()">
+            <input type="password" ng-model="ctrl.changePasswordData.oldPassword" placeholder="Old Password" required><br>
+            <input type="password" ng-model="ctrl.changePasswordData.newPassword" placeholder="New Password" required><br>
+            <button type="submit">Change Password</button>
+        </form>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div ng-show="ctrl.currentPage === 'forgotPassword'">
+        <h2>Forgot Password</h2>
+        <form ng-submit="ctrl.forgotPassword()">
+            <input type="text" ng-model="ctrl.forgotPasswordData.username" placeholder="Username" required><br>
+            <input type="email" ng-model="ctrl.forgotPasswordData.email" placeholder="Email" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Edit Account Form -->
+    <div ng-show="ctrl.currentPage === 'editAccount'">
+        <h2>Edit Account</h2>
+        <form ng-submit="ctrl.editAccount()">
+            <input type="text" ng-model="ctrl.editAccountData.username" placeholder="Username" required><br>
+            <input type="password" ng-model="ctrl.editAccountData.password" placeholder="Password" required><br>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    angular.module('myapp', [])
+    .controller('ctrl', function() {
+        var vm = this;
+
+        vm.currentPage = 'login'; // Default page is login
+
+        vm.loginData = {};
+        vm.registerData = {};
+        vm.changePasswordData = {};
+        vm.forgotPasswordData = {};
+        vm.editAccountData = {};
+
+        vm.students = [  // Sample data (replace with actual data)
+            { username: 'user1', password: 'pass1', email: 'user1@example.com' },
+            { username: 'user2', password: 'pass2', email: 'user2@example.com' }
+        ];
+
+        vm.login = function() {
+            // Check login credentials
+            // Display error if invalid
+        };
+
+        vm.register = function() {
+            // Add new user to students array
+        };
+
+        vm.changePassword = function() {
+            // Change password of current user
+        };
+
+        vm.forgotPassword = function() {
+            // Retrieve password if username and email match
+        };
+
+        vm.editAccount = function() {
+            // Update account information
+        };
+    });
+</script>
+
+</body>
+</html>

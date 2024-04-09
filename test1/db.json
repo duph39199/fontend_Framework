@@ -1,0 +1,18 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Tran Van dunf",
+            "email": "helo@gmail.com",
+            "phone": "0339399393",
+            "is_active": true
+        },
+        {
+            "id": "2",
+            "name": "dfghj sjhg jhsg",
+            "email": "agegdde@gmail.com",
+            "phone": "098767890",
+            "is_active": false
+        }
+    ]
+}
