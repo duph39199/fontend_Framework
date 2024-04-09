@@ -1,20 +1,5 @@
-[
-    {
-        name:"Ga Kho",
-    },
-    {
-        name:"Bo Kho",
-    },
-    {
-        name:"Nuoc Ngot",
-    },
-    {
-        name:"Com Rang",
-    },
-    {
-        name:"Com Chay",
-    },
-    {
-        name:"Do Cay",
-    },
+var Subjects = [
+    { name: "Lập trình Android nâng cao" },
+    { name: "Cơ sở dữ liệu" },
+    { name: "Kỹ thuật lập trình" }
 ];
